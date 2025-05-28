@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MakeCode Arcade Stencilr</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href=""/>
+
+    <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+
+    <!-- import the webpage's javascript file -->
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <h1>MakeCode Arcade Stencilr</h1>
+    <div class="ui segment">
+      <p>
+        This tool takes a <a href="https://arcade.makecode.com">MakeCode Arcade</a> image and turns into
+        a set of pixelated images and stencils. Turn them into bead patterns, cut out the stencils and use them to paint your image!
+      </p>
+    </div>
+
+    <form class="ui form">
+      <div class="ui field">
+        <label>Paste MakeCode Arcade Image below (open image editor, select area with Marquee, type Ctrl+C / Command+C, paste using Ctrl+V/Command+V)</label>
+        <textarea id="img" class="ui fluid" rows="20">
+        </textarea>
+      </div>
+      <div class="ui fields">
+        <div class="ui field">
+          <label>DXF Cell width (inches)</label>
+          <input id="cell" type="number" class="ui fluid" />
+        </div>
+        <div class="ui field">
+          <label>Filename prefix</label>
+          <input id="prefix" type="text" class="ui fluid" />
+        </div>
+      </div>
+    </form>
+
+    <div class="ui segment">
+      <button id="generate" class="ui button positive">
+        generate
+      </button>
+      <label id="output" class="ui small"></label>
+      <div id="preview"></div>
+      <div id="loader" class="ui inverted dimmer">
+        <div class="ui loader"></div>
+      </div>
+    </div>
+
+    <div class="ui segment">
+      <h3>
+        Beads
+      </h3>
+      <p>
+        Print the generated image at full scale (100%, <b>no</b> "fit to page") as a guide to recreate this image in beads.
+      </p>
+      <div id="beadssvg"></div>
+      <h3>
+        Knitting and stitching
+      </h3>
+      <p>
+        Use the generated image with <a href="https://www.pixel-stitch.net/">https://www.pixel-stitch.net/</a> to generate stitching, knitting patterns.
+      </p>
+      <div id="beads"></div>
+      <h3>
+        Pix Bricks
+      </h3>
+      <p>
+        Use the generated image with <a href="https://pix-brix.com">https://pix-brix.com/</a> to pixelate art your drawing!
+      </p>
+    </div>
+
+    <div class="ui segment">
+      <h2>
+        LEGO bricks
+      </h2>
+      <p>
+        Print these patterns to rebuild your drawings using LEGO bricks.
+      </p>
+    <div id="legomodel" class="ui cards">
+      Nothing yet... click generate.
+    </div>
+    </div>
+
+
+    <div class="ui segment">
+      <h2>
+        Laser cutting
+      </h2>
+      <p>
+        Copy the source of a MakeCode Arcade image into the textbox below
+        and click <strong>generate</strong> to turn it into DXF stencils.
+      </p>
+      <p>
+        Use a laser cutter, Cricut or hobby stencil to cut out the stencils. If you have a water cutter, you can cut any metal too.
+      </p>
+      <p>
+        Paint each layer with color markers or spray paints,
+        you can also paint t-shirts.
+      </p>
+    <div id="model" class="ui cards">
+      Nothing yet... click generate.
+    </div>
+    </div>
+
+    <div class="ui footer">
+      Made with ❤️ with <a href="https://maker.js.org/">Maker.JS</a>.
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
